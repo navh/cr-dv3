@@ -17,14 +17,11 @@ module load python/3.11
 virtualenv --no-download $SLURM_TMPDIR/env
 source $SLURM_TMPDIR/env/bin/activate
 pip install --no-index --upgrade pip
-pip install -r requirements.txt
+pip install -r requirements.txt --no-index
+pip install crafter
 
 echo "starting training..."
 
 # Run baseline crafter
 python dreamerv3/train.py --logdir ~/logdir/crafter-dv3_1 \
 --env.crafter.outdir ~/logdir/crafter-dv3_1 --configs crafter
-
-# Run tensorboard
-tensorboard --logdir ~/logdir/crafter-dv3-cr_1 
-
