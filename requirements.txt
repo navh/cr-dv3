@@ -11,3 +11,4 @@ ruamel.yaml
 tensorflow-cpu
 tensorflow_probability
 tensorflow
+dm-reverb
